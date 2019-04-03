@@ -1,0 +1,26 @@
+{
+  "name": "api_neo4j",
+  "version": "1.0.0",
+  "description": "Api for Práctica 3. Graph databases",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "api",
+    "neo4j"
+  ],
+  "author": "antony999k",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "debug": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "helmet": "^3.14.0",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "neo4j-driver": "*"
+  }
+}
