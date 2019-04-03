@@ -4,7 +4,9 @@
   "description": "Api for Práctica 3. Graph databases",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "start": "node app.js",
+    "test": "nodemon app.js",
+    "dev": "DEBUG=dev NODE_ENV=develop nodemon app.js"
   },
   "keywords": [
     "api",
@@ -19,8 +21,8 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "helmet": "^3.14.0",
+    "neo4j-driver": "^1.7.3",
     "path": "^0.12.7",
-    "request": "^2.88.0",
-    "neo4j-driver": "*"
+    "request": "^2.88.0"
   }
 }
