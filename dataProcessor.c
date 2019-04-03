@@ -2,14 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-// Signals library
-#include <errno.h>
-#include <signal.h>
-// Sockets libraries
-#include <netdb.h>
-#include <sys/poll.h>
-// Posix threads library
-#include <pthread.h>
 
 #define MAX_ACCOUNTS 5
 #define BUFFER_SIZE 4096
