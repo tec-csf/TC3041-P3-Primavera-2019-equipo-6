@@ -17,20 +17,21 @@
 
 ///// FUNCTION DECLARATIONS
 void readData();
+void instructions(char * program);
 
 ///// MAIN FUNCTION
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]){
+    if(argv[1]==NULL){
+        instructions(argv[0]);
+    }
     readData(argv[1]);
+    return 0;
 }
 
-void readData(char *filename)
-{
+void readData(char *filename){
     FILE *fp;
     char str[BUFFER_SIZE];
-
     FILE * file_ptrOut = NULL;
-    char buffer[BUFFER_SIZE];
 
     long long int nodeA, nodeB;
 
@@ -39,17 +40,23 @@ void readData(char *filename)
  
     fp = fopen(filename, "r");
     if (fp == NULL){
-        printf("Could not open file %s",filename);
+        printf("Could not open file\n");
         return;
     }
 
+    fgets(str, BUFFER_SIZE, fp);
     fprintf(file_ptrOut, "FromNodeId,ToNodeId\n");
-    while (fgets(str, BUFFER_SIZE, fp) != NULL)
-    {
-        sscanf(buffer, "%lld %lld\n", &nodeA, &nodeB); 
+    while (fgets(str, BUFFER_SIZE, fp) != NULL){
+        sscanf(str, "%lld %lld\n", &nodeA, &nodeB); 
         fprintf(file_ptrOut, "%lld,%lld\n", nodeA, nodeB); 
     }
     
     fclose(fp);
     fclose(file_ptrOut);
+}
+
+void instructions(char * program){
+    printf("Usage:\n");
+    printf("\t%s {filename}\n", program);
+    exit(EXIT_FAILURE);
 }
