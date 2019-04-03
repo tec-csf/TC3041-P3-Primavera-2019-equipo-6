@@ -37,7 +37,7 @@ void readData(char *filename){
     }
 
     fgets(str, BUFFER_SIZE, fp);
-    fprintf(file_ptrOut, "FromNodeId,ToNodeId\n");
+    fprintf(file_ptrOut, ":FROMNODEID,:TONODEID\n");
     while (fgets(str, BUFFER_SIZE, fp) != NULL){
         sscanf(str, "%lld %lld\n", &nodeA, &nodeB); 
         fprintf(file_ptrOut, "%lld,%lld\n", nodeA, nodeB); 

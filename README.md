@@ -16,6 +16,11 @@ Orientaciones para la **Práctica 3. Graph databases**
 ### Correr Neo4j en container
 `docker run --name=neo4j -m=4g --publish=7474:7474 --publish=7687:7687 --volume=$HOME/neo4j/data:/data --env=NEO4J_AUTH=none neo4j`
 
+### Importar Dataset
+- Copiar .csv en docker: `docker cp out.csv neo4j:/var/lib/neo4j/import/`
+USING PERIODIC COMMIT LOAD CSV WITH HEADERS FROM "file:/nodes.csv" AS row CREATE (:Node {nodeID: row.nodeId});
+- Neo4j Querie: `LOAD CSV FROM "file:///out.csv" AS line RETURN count(*);`
+
 ## Guía de estilos
 ### Mensajes en los Commits de Git
 

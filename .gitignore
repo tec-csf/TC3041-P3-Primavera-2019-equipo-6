@@ -5,3 +5,5 @@ npm-debug.log
 .DS_Store
 **/node_modules
 */node_modules
+main.o
+*.o
