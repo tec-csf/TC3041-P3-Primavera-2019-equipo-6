@@ -20,7 +20,7 @@ sudo docker cp soc-Slashdot0902.csv neo4j:/var/lib/neo4j/import/
 
 #Relaciones
 USING PERIODIC COMMIT 150
-LOAD CSV WITH HEADERS FROM "file:/soc-Slashdot.csv" AS ROW
+LOAD CSV WITH HEADERS FROM "file:/soc-Slashdot0902.csv" AS ROW
 MATCH (a:Nodes {id: ROW.FromNodeId})
 MATCH (b:Nodes {id: ROW.ToNodeId})
 CREATE (a)-[c:Connects_To]->(b)

@@ -6,6 +6,92 @@ Alberto Pascal
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/wasabeef/awesome-android-ui)
 
+# Endpoints
+Ruta Desarrollo: http://127.0.0.1:3500/
+
+## Cantidad máxima de relaciones en un nodo (GET) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    /peticion1
+
+#### Respuesta esperada
+    {
+        "keys": [
+            "max(Max_relations)"
+        ],
+        "length": 1,
+        "_fields": [
+            {
+                "low": 3450,
+                "high": 0
+            }
+        ],
+        "_fieldLookup": {
+            "max(Max_relations)": 0
+        }
+    }
+
+## Nodos aquellos nodos que tienen menos de 200 relaciones.  (GET) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    /peticion2
+
+#### Respuesta esperada
+    [
+        {
+            "keys": [
+                "Name",
+                "connections"
+            ],
+            "length": 2,
+            "_fields": [
+                "Node192",
+                {
+                    "low": 5,
+                    "high": 0
+                }
+            ],
+            "_fieldLookup": {
+                "Name": 0,
+                "connections": 1
+            }
+        },
+        {
+            "keys": [
+                "Name",
+                "connections"
+            ],
+            "length": 2,
+            "_fields": [
+                "Node160",
+                {
+                    "low": 1,
+                    "high": 0
+                }
+            ],
+            "_fieldLookup": {
+                "Name": 0,
+                "connections": 1
+            }
+        },
+    ]
+
+## Nodo más nuevo/lejano al que se puede conectar el primer nodo  (GET) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    /peticion3
+
+#### Respuesta esperada
+    {
+        "keys": [
+            "Name",
+            "max_id"
+        ],
+        "length": 2,
+        "_fields": [
+            "Node1",
+            "95"
+        ],
+        "_fieldLookup": {
+            "Name": 0,
+            "max_id": 1
+        }
+    }
+
 Orientaciones para la **Práctica 3. Graph databases**
 # Contribuir
 ## Base de datos (Neo4j)
